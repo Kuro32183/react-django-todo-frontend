@@ -4,6 +4,7 @@ import { Tag } from '../types/types'
 
 export const useQueryTags = () => {
   const getTags = async () => {
+    // axiosからREST APIからfetchする
     const { data } = await axios.get<Tag[]>(
       `${process.env.REACT_APP_REST_URL}/tags/`
     )

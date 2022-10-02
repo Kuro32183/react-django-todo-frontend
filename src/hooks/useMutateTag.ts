@@ -8,6 +8,7 @@ export const useMutateTag = () => {
   const queryClient = useQueryClient()
   const dispatch = useAppDispatch()
 
+  // 新規作成のカスタムフック
   const createTagMutation = useMutation(
     (tag: Omit<Tag, 'id'>) =>
       axios.post<Tag>(`${process.env.REACT_APP_REST_URL}/tags/`, tag),
@@ -21,6 +22,8 @@ export const useMutateTag = () => {
       },
     }
   )
+
+  // 編集のカスタムフック
   const updateTagMutation = useMutation(
     (tag: Tag) =>
       axios.put<Tag>(`${process.env.REACT_APP_REST_URL}/tags/${tag.id}/`, tag),
@@ -39,6 +42,8 @@ export const useMutateTag = () => {
       },
     }
   )
+
+  // 削除のカスタムフック
   const deleteTagMutation = useMutation(
     (id: number) =>
       axios.delete(`${process.env.REACT_APP_REST_URL}/tags/${id}/`),

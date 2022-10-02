@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../app/store'
 import { EditTask, Tag } from '../types/types'
 
+//stateの型を定義
 export interface TaskState {
   editedTask: EditTask
   editedTag: Tag

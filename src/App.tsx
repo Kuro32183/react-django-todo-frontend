@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { MainTask } from './components/MainTask'
 import { MainTag } from './components/MainTag'
 
+// REACT-QUERYを設定
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

@@ -8,6 +8,7 @@ export const useMutateTask = () => {
   const dispatch = useAppDispatch()
   const queryClient = useQueryClient()
 
+  //新規作成のカスタムフック
   const createTaskMutation = useMutation(
     (task: Omit<EditTask, 'id'>) =>
       axios.post<Task>(`${process.env.REACT_APP_REST_URL}/tasks/`, task),
@@ -24,6 +25,7 @@ export const useMutateTask = () => {
       },
     }
   )
+  //編集のカスタムフック
   const updateTaskMutation = useMutation(
     (task: EditTask) =>
       axios.put<Task>(
@@ -45,6 +47,7 @@ export const useMutateTask = () => {
       },
     }
   )
+  //　削除のカスタムフック
   const deleteTaskMutation = useMutation(
     (id: number) =>
       axios.delete(`${process.env.REACT_APP_REST_URL}/tasks/${id}/`),
